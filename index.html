@@ -15,13 +15,62 @@
 </style>
 
 <body>
+  <div id="loading" class="w-100 z-3 position-absolute" style="min-height: 100vh; backdrop-filter: blur(20px);">
+    <div class="spinner-border position-absolute text-light" style="top: 50%; left:50%; " role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
 
-  <div id="alert" class=" w-25 " style="
+  <div id="alert" class="show fade w-25 " style="
   position: fixed;
   left: 1%;
   bottom: 0;
   z-index: 99999;
 "></div>
+
+
+
+<!-- ** add mew post modal ** -->
+
+<div class="modal fade show" id="content_newPost" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+aria-hidden="true">
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <div class="modal-header d-flex justify-content-between">
+      <h5 class="modal-title text-uppercase" id="exampleModalLabel">new post</h5>
+      <button type="button"
+        class="close d-flex justify-content-center align-items-center border-0 fs-4 w-auto h-auto"
+        data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body ">
+
+        <div data-mdb-input-init class="form-outline flex-fill mb-2 ">
+          <label class="form-label" for="post_title">Post Title</label>
+          <input type="text" id="post_title" class="form-control" />
+        </div>
+      <div class="mb-3">
+        <label for="post_pody" class="form-label">Post Body</label>
+        <textarea class="form-control" id="post_pody" rows="3"></textarea>
+      </div>
+      <div class="mb-4">
+        <label class="mb-1" for="post-user-img">Choose a picture for your new post</label>
+        <input type="file" class="form-control  " id="post-user-img">
+      </div>
+      <button id="go_newpost" class="btn btn-primary w-100">Add</button>
+
+
+    </div>
+
+  </div>
+</div>
+</div>
+
+
+
+
+
 
 
 
@@ -37,7 +86,7 @@
   <div class="modal fade show" id="content_register" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
     aria-hidden="true">
     <div class="modal-dialog" role="document">
-      <div class="modal-content">
+      <div class=" modal-content">
         <div class="modal-header d-flex justify-content-between">
           <h5 class="modal-title text-uppercase" id="exampleModalLabel">register</h5>
           <button type="button"
@@ -250,15 +299,15 @@
 
 
   <div class="container d-flex flex-column gap-5">
-    <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top rounded-1">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary rounded-1">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#" id="nav_logo">social communication</a>
+        <a class="navbar-brand m-3" href="#" id="nav_logo"><i class="fa-brands fs-2 fa-bluesky" ></i></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
           aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse d-lg-block w-100" id="navbarNav">
-          <div class="d-flex justify-content-between flex-column  flex-lg-row   ">
+          <div class="d-flex justify-content-between flex-column  flex-lg-row  align-items-center ">
             <ul class="navbar-nav ">
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="#">Home</a>
@@ -267,27 +316,39 @@
                 <a class="nav-link" href="#">profile</a>
               </li>
             </ul>
-            <div class="d-flex align-items-lg-center flex-column flex-lg-row">
+            
+            <div class="d-flex align-items-lg-center flex-row flex-lg-row">
+
               <div class="form-check form-switch d-inline-block me-2">
                 <input class="form-check-input" type="checkbox" id="darkModeSwitch" checked>
-                <label class="form-check-label" for="darkModeSwitch">Dark Mode</label>
               </div>
+              
               <div id="login_register" class="">
-                <button type="button" data-toggle="modal" data-target="#content_login" id="show_form_log"
-                  data-whatever="@mdo" class="btn btn-outline-success btn-sm  me-2">login</button>
-                <button class="btn btn-outline-success  btn-sm" type="button" data-toggle="modal"
+                <button
+                 type="button"
+                  data-toggle="modal" 
+                  data-target="#content_login"
+                   id="show_form_log"
+                  data-whatever="@mdo"
+                   class="btn btn-outline-success btn-sm  me-2"
+                   >login</button>
+<button class="btn btn-outline-success  btn-sm" type="button" data-toggle="modal"
                   data-target="#content_register" id="" data-whatever="@mdo">register</button>
 
               </div>
+
               <div id="signOut" style="display: none;" class="">
                 <button class="btn btn-outline-danger  btn-sm" id="signOut_btn">sign out</button>
-
+              </div>
+              <div class="d-flex flex-column m-2 align-items-center justify-content-between me-2">
+                <img width="40px" id="user__img" height="40px" class=" rounded-circle  border border-white border-opacity-50 " src="./asets/user vector.jpg" alt="">
+                <h2 id="user__name" class="m-1 fs-6">ahmed</h2>
               </div>
               
             </div>
 
           </div>
-        </div>
+      </div>
       </div>
     </nav>
 
