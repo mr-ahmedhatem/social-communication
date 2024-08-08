@@ -11,20 +11,7 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <style>
-  html[data-bs-theme="light"] {
-    .loader {
-      --c: no-repeat radial-gradient(farthest-side, #000000 93%, #00000000);
-    }
-    .loader:before {
-    background: #000000;
-  }
-
-  .loader:after {
-
-    background: #000000;
-  }
-    
-  }
+  /* HTML: <div class="loader"></div> */
   .loader {
     width: 30px;
     height: 40px;
@@ -137,7 +124,6 @@
       </div>
     </div>
   </div>
-
   <div id="alert" class="show fade w-25 " style="
   position: fixed;
   left: 1%;
@@ -145,34 +131,7 @@
   z-index: 99999;
 "></div>
 
-
-
-  <!-- ** add mew post modal ** -->
-
-  <div class="modal fade show" id="content_newPost" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-    aria-hidden="true">
-   
-
-      </div>
-    </div>
-  </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
   <!-- ** register modal ** -->
-
-
-
   <div class="modal fade show" id="content_register" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
     aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -186,24 +145,6 @@
           </button>
         </div>
         <div class="modal-body p-0">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
           <section class="vh-75">
             <div class="p-1">
               <div class="row d-flex justify-content-center align-items-center h-100">
@@ -212,9 +153,7 @@
                     <div class="card-body p-md-1">
                       <div class="row justify-content-center flex-column-reverse">
                         <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1 w-100">
-
                           <p class="text-center h2 fw-bold mb-4 mx-1 mx-md-2 mt-2">register</p>
-
                           <form class="mx-1 mx-md-4">
                             <div class="input-group mb-4 d-flex flex-column">
                               <div>
@@ -294,27 +233,7 @@
               </div>
             </div>
           </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         </div>
-
       </div>
     </div>
   </div>
@@ -389,8 +308,8 @@
 
 
 
-  <div class="container d-flex flex-column gap-5">
-    <nav class="navbar navbar-expand-lg bg-body-tertiary rounded-1  border-bottom border-primary border-opacity-50">
+  <div class="container d-flex flex-column">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary rounded-1 border-bottom border-primary border-opacity-50">
       <div class="container-fluid">
         <a class="navbar-brand m-3" href="#" id="nav_logo"><i class="fa-brands fs-2 fa-bluesky"></i></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -401,7 +320,7 @@
           <div class="d-flex justify-content-between flex-column  flex-lg-row  align-items-center ">
             <ul class="navbar-nav ">
               <li class="nav-item">
-                <a class="nav-link active " aria-current="page" href="#">Home</a>
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">profile</a>
@@ -437,27 +356,25 @@
         </div>
       </div>
     </nav>
-
+    <h1 class="fw-bold my-5"><span id="user__namePost"></span> Post</h1>
     <div class="posts ">
 
     </div>
-
-  </div>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.3/axios.min.js"
-    integrity="sha512-zJXKBryKlsiDaWcWQ9fuvy50SG03/Qc5SqfLXxHmk9XiUUbcD9lXYjHDBxLFOuZSU6ULXaJ69bd7blSMEgxXNQ=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-    crossorigin="anonymous"></script>
-  <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-  <script src="./asets/script.js"></script>
-  <script src="./asets/darkMode.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.3/axios.min.js"
+      integrity="sha512-zJXKBryKlsiDaWcWQ9fuvy50SG03/Qc5SqfLXxHmk9XiUUbcD9lXYjHDBxLFOuZSU6ULXaJ69bd7blSMEgxXNQ=="
+      crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="./asets/postReview.js"></script>
+    <script src="./asets/darkMode.js"></script>
 </body>
 
 </html>
